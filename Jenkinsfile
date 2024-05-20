@@ -1,4 +1,4 @@
-pipeline {
+tpipeline {
   agent any
 
   stages {
@@ -6,7 +6,7 @@ pipeline {
       steps {
         script {
           // Get latest code from Git repository (assuming credentials are configured)
-          git branch: 'main', url: 'https://github.com/iashbinsapkota/floodshield.git'
+          git branch: 'main', url: 'https://github.com/iashbinsapkota/my-react-app.git'
         }
       }
     }
