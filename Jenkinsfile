@@ -2,18 +2,10 @@ tpipeline {
   agent any
 
   stages {
-    stage('Checkout Code') {
-      steps {
-        script {
-          // Get latest code from Git repository (assuming credentials are configured)
-          git branch: 'main', url: 'https://github.com/iashbinsapkota/my-react-app.git'
-        }
-      }
-    }
     stage('Build React App') {
       steps {
         bat 'npm install'// Install dependencies
-        bat 'npm build'      // Build the React app
+        bat 'npm run build'      // Build the React app
         bat 'npm install jest-junit --save-dev'
       }
     }
