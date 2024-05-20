@@ -14,6 +14,7 @@ pipeline {
       steps {
         bat 'npm install'// Install dependencies
         bat 'npm start' // Build the React app
+        bat 'npm install jest-junit --save-dev'
       }
     }
     stage('Test') {
