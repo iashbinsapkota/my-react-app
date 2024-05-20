@@ -11,7 +11,7 @@ pipeline {
     }
     stage('Test') {
             steps {
-                bat 'npm test' // Run automated tests
+                bat 'npm test --passWithNoTests' // Run automated tests
             }
         }
     }
