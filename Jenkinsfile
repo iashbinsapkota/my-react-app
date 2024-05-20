@@ -11,14 +11,14 @@ pipeline {
     }
     stage('Test') {
             steps {
-                bat 'npm test -- --coverage --reporters=default --reporters=jest-junit' // Run automated tests with coverage and JUnit reporting
+                bat 'npm test' // Run automated tests
             }
         }
     }
     post {
         always {
             archiveArtifacts artifacts: 'build/**', allowEmptyArchive: true // Archive the build artifacts
-            junit 'coverage/junit/*.xml' // Archive the test results
+            
         }
     }
 }
