@@ -14,12 +14,12 @@ pipeline {
       steps {
         bat 'npm install'// Install dependencies
         bat 'npm start' // Build the React app
-        bat 'npm test -- --coverage --reporters=default --reporters=jest-junit'
+        bat 'npm install jest-junit --save-dev'
       }
     }
     stage('Test') {
             steps {
-                bat 'npm test -- --passWithNoTests' // Run automated tests with coverage and JUnit reporting
+                bat 'npm test -- --coverage --reporters=default --reporters=jest-junit' // Run automated tests with coverage and JUnit reporting
             }
         }
     }
