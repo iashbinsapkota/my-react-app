@@ -13,7 +13,7 @@ tpipeline {
     stage('Build React App') {
       steps {
         bat 'npm install'// Install dependencies
-              // Build the React app
+        bat 'npm build'      // Build the React app
         bat 'npm install jest-junit --save-dev'
       }
     }
