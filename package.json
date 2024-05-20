@@ -14,8 +14,17 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts jest --coverage --reporters=default --reporters=jest-junit test",
     "eject": "react-scripts eject"
+  },
+  "jest": {
+    "reporters": [
+      "default",
+      ["jest-junit", {
+        "outputDirectory": "coverage/junit",
+        "outputName": "junit.xml"
+      }]
+    ]
   },
   "eslintConfig": {
     "extends": [
