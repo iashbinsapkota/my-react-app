@@ -13,12 +13,19 @@ pipeline {
     stage('Build React App') {
       steps {
         bat 'npm install'// Install dependencies
-      }
-    }
-    stage('Start React App (Optional)') { // This stage can be removed if not needed
-      steps {
         bat 'npm start' // Build the React app
       }
     }
-  }
+    stage('Test') {
+            steps {
+                bat 'npm test -- --coverage --reporters=default --reporters=jest-junit' // Run automated tests with coverage and JUnit reporting
+            }
+        }
+    }
+    post {
+        always {
+            archiveArtifacts artifacts: 'build/**', allowEmptyArchive: true // Archive the build artifacts
+            junit 'coverage/junit/*.xml' // Archive the test results
+        }
+    }
 }
