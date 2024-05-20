@@ -19,7 +19,7 @@ pipeline {
     }
     stage('Test') {
             steps {
-                bat 'npm test -- --coverage --reporters=default --reporters=jest-junit' // Run automated tests with coverage and JUnit reporting
+                bat 'npm test -- --coverage' // Run automated tests with coverage and JUnit reporting
             }
         }
     }
