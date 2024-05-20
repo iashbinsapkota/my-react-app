@@ -12,12 +12,12 @@ pipeline {
     }
     stage('Build React App') {
       steps {
-        sh 'bat install'// Install dependencies
+        bat 'npm install'// Install dependencies
       }
     }
     stage('Start React App (Optional)') { // This stage can be removed if not needed
       steps {
-        sh 'bat start' // Build the React app
+        bat 'npm start' // Build the React app
       }
     }
   }
